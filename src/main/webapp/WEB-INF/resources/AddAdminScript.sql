@@ -1,0 +1,1 @@
+INSERT INTO users(id, username, password, gender, role) VALUES (1,'admin', 'admin', 'MALE', 'ROLE_ADMIN')

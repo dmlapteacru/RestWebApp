@@ -44,4 +44,8 @@ public class UserDao {
 
         return query.getResultList();
     }
+
+    public void saveUser(User user){
+        sessionFactory.getCurrentSession().save(user);
+    }
 }

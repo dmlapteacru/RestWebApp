@@ -45,12 +45,19 @@ img.avatar {
 /* Add padding to containers */
 .container {
     padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 /* The "Forgot password" text */
 span.psw {
     float: right;
     padding-top: 16px;
+}
+.selForm {
+    width: 50%;
+
 }
 
 /* Change styles for span and cancel button on extra small screens */

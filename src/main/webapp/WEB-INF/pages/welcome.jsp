@@ -11,5 +11,8 @@
 <body>
 <h1>Hi, Welcome to our super-puper secret page!</h1>
 <p>Next, you can see the full list of <a href="/showFemales">girls</a> or <a href="/showMales">boys</a></p>
+<form:form method="POST" action="/logout">
+    <input type="submit" value="Logout"/>
+</form:form>
 </body>
 </html>

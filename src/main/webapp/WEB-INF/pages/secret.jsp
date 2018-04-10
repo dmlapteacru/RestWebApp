@@ -1,4 +1,5 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: mbezaliuc
@@ -16,5 +17,8 @@
 <sec:authorize url="/admin">
     This content will only be visible to users who are authorized to send requests to the "/admin" URL.
 </sec:authorize>
+<form:form method="POST" action="/logout">
+    <input type="submit" value="Logout"/>
+</form:form>
 </body>
 </html>

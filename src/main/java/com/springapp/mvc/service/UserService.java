@@ -32,7 +32,12 @@ public class UserService {
     }
 
     public Optional<User> getUserByName(String username) {
-        return userDao.getUserByName(username);
+        Optional<User> user = userDao.getUserByName(username);
+        return user;
+    }
+
+    public Optional<User> getUserById(int id) {
+        return userDao.getUserById(id);
     }
 
     public void saveUser(User user) {
@@ -45,9 +50,24 @@ public class UserService {
         return false;
     }
 
-    public boolean checkIfUserExists(User user){
+    public boolean checkIfUserExistsByUsername(User user){
         if (userDao.getListOfUsers().stream()
                 .anyMatch(u -> u.getUsername().equals(user.getUsername()))) return true;
         return false;
+    }
+
+    public boolean checkIfUserExistsByEmail(User user){
+        if (userDao.getListOfUsers().stream()
+                .anyMatch(u -> u.getEmail().equals(user.getEmail()))) return true;
+        return false;
+    }
+
+    public void editUser(User user){
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userDao.editUser(user);
+    }
+
+    public void deleteUser(int id) {
+        userDao.deleteUser(id);
     }
 }

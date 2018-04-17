@@ -4,8 +4,17 @@
 <html>
 <head>
     <title>Title</title>
+    <style type="text/css">
+        <%@include file="../resources/style.css"%>
+    </style>
 </head>
 <body>
+<div class="menu_items">
+    <a href="/allusers">Home</a>
+    <a href="/profile?id=${userId}">Profile</a>
+    <a href="/adminpanel">Admin Panel</a>
+    <a href="/secret">Secret</a>
+</div>
 <h2>Here are all our ${gender}:</h2>
 <c:forEach items="${list}" var="user">
     <p>Name: ${user.username} | Password: ${user.password}</p>

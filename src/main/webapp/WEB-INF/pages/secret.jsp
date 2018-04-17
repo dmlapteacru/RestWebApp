@@ -11,8 +11,17 @@
 <html>
 <head>
     <title>Title</title>
+    <style type="text/css">
+        <%@include file="../resources/style.css"%>
+    </style>
 </head>
 <body>
+<div class="menu_items">
+    <a href="/allusers">Home</a>
+    <a href="/profile?id=${userId}">Profile</a>
+    <a href="/adminpanel">Admin Panel</a>
+    <a href="/secret">Secret</a>
+</div>
 <h1>SECRET</h1>
 <sec:authorize url="/admin">
     This content will only be visible to users who are authorized to send requests to the "/admin" URL.

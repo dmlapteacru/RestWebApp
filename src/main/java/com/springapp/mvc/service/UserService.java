@@ -4,6 +4,8 @@ package com.springapp.mvc.service;
 import com.springapp.mvc.datasource.UserDao;
 
 import com.springapp.mvc.model.Gender;
+import com.springapp.mvc.model.Role;
+import com.springapp.mvc.model.Roles;
 import com.springapp.mvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -69,5 +71,29 @@ public class UserService {
 
     public void deleteUser(int id) {
         userDao.deleteUser(id);
+    }
+
+    public List<User> getAllUsersByAgeOver(double age) {
+        return userDao.getListOfUsersByAgeOver(age);
+    }
+
+    public List<User> getAllUsersByAgeUnder(double age) {
+        return userDao.getListOfUsersByAgeUnder(age);
+    }
+
+    public List<User> getAllUsersByRole(Role role) {
+        return userDao.getListOfUsersByRole(role);
+    }
+
+    public void saveRole(Roles newRole) {
+        userDao.saveRole(newRole);
+    }
+
+    public void editRole(Roles newRole) {
+        userDao.editRole(newRole);
+    }
+
+    public void deleteRole(int id) {
+        userDao.deleteRole(id);
     }
 }
